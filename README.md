@@ -10,4 +10,5 @@
 - [ ] Printer
 
 in progess..
-[X] some test
+
+- [X] some test
