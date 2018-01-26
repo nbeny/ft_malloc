@@ -1,19 +1,10 @@
-//#include "malloc.h"
-#include <stdlib.h>
-#include <sys/mman.h>
-#include <stdio.h>
-
-typedef struct	s_dop
-{
-	int				a;
-	char			*str;
-	struct s_dop	*next;
-}				t_dop;
+#include "malloc.h"
 
 void	*ft_malloc(size_t size)
 {
 	void	*mem;
 
+	if (size <= 0)
 	mem = mmap(0, size, PROT_READ | PROT_WRITE,\
 				MAP_ANON | MAP_PRIVATE, -1, 0);
 	return (mem);
