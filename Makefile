@@ -6,7 +6,7 @@
 #    By: nbeny <nbeny@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/04/12 01:47:28 by nbeny             #+#    #+#              #
-#    Updated: 2018/01/26 23:20:49 by nbeny            ###   ########.fr        #
+#    Updated: 2018/02/11 14:22:21 by nbeny            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ NAME	=	malloc
 
 N_INC	=	malloc.h
 N_SRC	=	malloc.c free.c realloc.c\
+			
 			main.c
 
 CC	=	gcc

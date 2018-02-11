@@ -7,7 +7,6 @@
 typedef struct	s_page
 {
 	int				id;
-	int				size;
 	struct s_ptr	*ptr;
 	size_t			addr;
 	struct s_page	*next;
@@ -17,7 +16,6 @@ typedef struct	s_page
 typedef struct	s_ptr
 {
 	int				id;
-	int				size;
 	int				free;
 	size_t			addr;
 	struct s_ptr	*next;
