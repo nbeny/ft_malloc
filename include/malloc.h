@@ -23,7 +23,11 @@ typedef struct	s_ptr
 	struct s_ptr	*next;
 	struct s_ptr	*prev;
 }				t_ptr;
-
+/*
+**globale
+*/
+struct s_page	g_page;
+struct s_ptr	g_ptr;
 /*
 **page
 */

@@ -8,32 +8,29 @@
 
 void	*ft_malloc(size_t size)
 {
-	static t_page	*page = NULL;
-	static t_ptr	*ptr = NULL;
-
 	if (size <= 0 || size > ((2^64) - 1))
 		return (NULL);
-	if ( ptr != NULL)
-		ptr = reload_list_ptr(ptr);
-	if (page != NULL)
-		page = reload_list_page(page);
+	if (g_ptr != NULL)
+		g_ptr = reload_list_ptr(g_ptr);
+	if (g_page != NULL)
+		g_page = reload_list_page(g_page);
 	else if (size < 64)
 	{
-		if (!check_page_tiny(page, ptr, size))
-			page = add_page_tiny(page, size, 0);
+		if (!check_page_tiny(g_page, g_ptr, size))
+			g_page = add_page_tiny(g_page, size, 0);
 		if (page != NULL)
-			ptr = add_ptr_tiny(page, ptr, size, 0);
+			g_ptr = add_ptr_tiny(g_page, g_ptr, size, 0);
 	}
 	else if (size >= 64 && size < 4096)
 	{
-		if (!check_page_small(page, ptr, size))
-			page = add_page(page, size, 1);
+		if (!check_page_small(g_page, g_ptr, size))
+			g_page = add_page(g_page, size, 1);
 		if (page != NULL)
-			ptr = add_ptr_small(page, ptr, size, 1);
+			g_ptr = add_ptr_small(g_page, g_ptr, size, 1);
 	}
 	else
-		page = add_page(page, size, 2);
-	if (page == NULL)
+		g_page = add_page(g_page, size, 2);
+	if (g_page == NULL)
 		return (NULL);
-	return ((void *)go_to_addr(page, ptr));
+	return ((void *)go_to_addr(g_page, g_ptr));
 }
