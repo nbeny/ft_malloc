@@ -8,7 +8,7 @@
 
 void	*ft_malloc(size_t size)
 {
-	if (size <= 0 || size > ((2^64) - 1))
+	if (size <= 0 || size > (ft_power(2, 64) - 1))
 		return (NULL);
 	if (g_ptr != NULL)
 		g_ptr = reload_list_ptr(g_ptr);

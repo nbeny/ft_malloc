@@ -2,15 +2,14 @@
 
 t_page	*init_page(size_t size, int id)
 {
-	static t_page	*page = NULL;
-
-	if (!(page = (t_page *)mmap(0, size + sizeof(t_page), PROT_READ | PROT_WRITE, MAP_ANON | MAP_PRIVATE, -1, 0)))
+	if (!(g_page = (t_page *)mmap(0, size + sizeof(t_page), PROT_READ | PROT_WRITE, MAP_ANON | MAP_PRIVATE, -1, 0)))
 		return (NULL);
-	page->id = id;
-	page->ptr = NULL;
-	page->addr = (size_t)page;
-	page->next = NULL;
-	page->prev = NULL;
+	g_page->id = id;
+	g_page->ptr = NULL;
+	g_page->addr = (size_t)g_page;
+	g_page->next = NULL;
+	g_page->prev = NULL;
+	return (page);
 }
 
 t_page	*page_prev(t_page *page, t_page *s)

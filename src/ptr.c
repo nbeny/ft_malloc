@@ -3,7 +3,7 @@
 t_ptr	*init_ptr(t_ptr *ptr, size_t size, int id)
 {
 	ptr->id = id;
-	ptr->size = size;
+	ptr->size = ft_power_of(size);
 	ptr->free = 0;
 	ptr->ptr = ptr;
 	ptr->addr = (size_t)ptr;
@@ -45,3 +45,4 @@ t_ptr	*add_ptr(t_page *page, t_ptr *ptr, size_t size, int id)
 	}
 	return (ptr);
 }
+
