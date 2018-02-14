@@ -23,27 +23,33 @@ typedef struct	s_ptr
 	struct s_ptr	*next;
 	struct s_ptr	*prev;
 }				t_ptr;
+
 /*
 **globale
 */
 struct s_page	*g_page;
-struct s_ptr	*g_ptr;
+
+/*
+**tools
+*/
+size_t	ft_power_of(size_t size);
 /*
 **page
 */
-t_page	*init_page(size_t page, int id);
-t_page	*page_prev(t_page *page, t_page *s);
+t_ptr	*init_ptr(t_ptr *ptr, size_t size, int id);
+t_page	*init_page(size_t size, int id);
+t_page	*do_prev(t_page *page, t_page *s);
 t_page	*add_page(t_page *page, size_t size, int id);
 /*
-**ptr
+**tiny
 */
-t_ptr	*init_ptr(size_t size, int id);
-t_ptr	*ptr_prev(t_ptr *ptr, t_ptr *s);
-t_ptr	*add_ptr(t_ptr *ptr, size_t *size, int id);
+int		check_page_tiny(t_page *page, size_t size);
+t_ptr	*add_ptr_tiny(t_page *page, size_t size, int id);
 /*
-**alloc
+**small
 */
-
+int		check_page_small(t_page *page, size_t size);
+t_ptr	*add_ptr_small(t_page *page, size_t size, int id);
 /*
 **malloc
 */
@@ -51,9 +57,9 @@ void	*ft_malloc(size_t size);
 /*
 **realloc
 */
-void	*ft_realloc(void *ptr, size_t size);
+//void	*ft_realloc(void *ptr, size_t size);
 /*
 **free
 */
-void	ft_free(void *ptr);
+//void	ft_free(void *ptr);
 #endif

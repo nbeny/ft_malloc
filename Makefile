@@ -6,16 +6,15 @@
 #    By: nbeny <nbeny@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/04/12 01:47:28 by nbeny             #+#    #+#              #
-#    Updated: 2018/02/11 14:22:21 by nbeny            ###   ########.fr        #
+#    Updated: 2018/02/14 17:14:37 by nbeny            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	malloc
 
 N_INC	=	malloc.h
-N_SRC	=	malloc.c free.c realloc.c\
-			
-			main.c
+N_SRC	=	tools.c page.c tiny.c small.c\
+			malloc.c main.c
 
 CC	=	gcc
 CC_FLAG	=	-Wall -Wall -Werror #-fsanitize=address -O0 -g3

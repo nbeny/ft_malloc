@@ -20,23 +20,23 @@ static int	check_page_size(t_page *page, size_t size)
 	return (0);
 }
 
-int			check_page_tiny(t_page *page, size_t size)
+int			check_page_small(t_page *page, size_t size)
 {
 	t_page	*s;
 
 	s = page;
 	if (page != NULL)
 	{
-		while (s != NULL && s->id != 0 && !check_page_size(s, ft_power_of(size)))
+		while (s != NULL && s->id != 1 && !check_page_size(s, ft_power_of(size)))
 			s = s->next;
-		if (s->id == 0)
+		if (s->id == 1)
 			return (1);
 		return (0);
 	}
 	return (0);
 }
 
-t_ptr		*add_ptr_tiny(t_page *page, size_t size, int id)
+t_ptr		*add_ptr_small(t_page *page, size_t size, int id)
 {
 	t_ptr	*s;
 
