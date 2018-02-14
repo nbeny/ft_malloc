@@ -6,7 +6,7 @@
 #    By: nbeny <nbeny@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/04/12 01:47:28 by nbeny             #+#    #+#              #
-#    Updated: 2018/02/14 17:14:37 by nbeny            ###   ########.fr        #
+#    Updated: 2018/02/14 18:08:38 by nbeny            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ N_SRC	=	tools.c page.c tiny.c small.c\
 			malloc.c main.c
 
 CC	=	gcc
-CC_FLAG	=	-Wall -Wall -Werror #-fsanitize=address -O0 -g3
+CC_FLAG	=	-Wall -Wall -Werror -fsanitize=address -O0 -g3
 CURSES	=	-ltermcap
 
 T_SRC	=	./src/

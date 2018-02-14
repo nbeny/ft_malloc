@@ -18,6 +18,7 @@ t_page	*init_page(size_t size, int id)
 
 	if (!(page = (t_page *)mmap(0, size + sizeof(t_page), PROT_READ | PROT_WRITE, MAP_ANON | MAP_PRIVATE, -1, 0)))
 		return (NULL);
+	ft_printf(0, "%d\n", id);
 	page->id = id;
 	page->size = size;
 	page->ptr = NULL;
