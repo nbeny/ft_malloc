@@ -28,7 +28,7 @@ typedef struct	s_ptr
 **globale
 */
 struct s_page	*g_page;
-struct s_ptr	*g_ptr;
+//struct s_ptr	*g_ptr = NULL;
 /*
 **tools
 */

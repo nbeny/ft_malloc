@@ -11,8 +11,8 @@ int		main(int ac, char **av)
 	tty = NULL;
 	tty = (char *)ft_malloc(sizeof(char) * 10);
 	a = (char *)ft_malloc(sizeof(char) * 10);
-	b = (char *)ft_malloc(sizeof(char) * 16);
-	while (i < 15)
+	b = (char *)ft_malloc(sizeof(char) * 4100);
+	while (i < 4098)
 	{
 		b[i] = '7';
 		i++;
@@ -41,12 +41,23 @@ int		main(int ac, char **av)
 	ft_printf(0, "%s\n", tty);
 	ft_printf(0, "%s\n", a);
 	ft_printf(0, "%s\n", b);
-	t_page *page;
+	t_page	*page;
+	t_ptr	*ptr;
+
 	page = g_page;
 	while (page != NULL)
 	{
-		ft_printf(0, "%d\n", page->addr);
+		ptr = g_page->ptr;
+		while (ptr != NULL)
+		{
+			ft_printf(0, "%d\n", ptr->id);fflush(stdin);
+			ft_printf(0, "qwer\n");fflush(stdin);
+			ptr = ptr->next;
+		}
+		ft_printf(0, "%d\n", page->size);fflush(stdin);
+		ft_printf(0, "asdf\n");fflush(stdin);
 		page = page->next;
 	}
+	ft_printf(0, "zxcv\n");fflush(stdin);
 	return (0);
 }

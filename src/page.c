@@ -6,7 +6,6 @@ t_ptr	*init_ptr(t_ptr *ptr, size_t size, int id)
 	ptr->size = ft_power_of(size);
 	ptr->free = 0;
 	ptr->addr = (size_t)ptr;
-	ptr->addr = (size_t)ptr;
 	ptr->next = NULL;
 	ptr->prev = NULL;
 	return (ptr);
@@ -18,7 +17,6 @@ t_page	*init_page(size_t size, int id)
 
 	if (!(page = (t_page *)mmap(0, size + sizeof(t_page), PROT_READ | PROT_WRITE, MAP_ANON | MAP_PRIVATE, -1, 0)))
 		return (NULL);
-	ft_printf(0, "%d\n", id);
 	page->id = id;
 	page->size = size;
 	page->ptr = NULL;
@@ -59,6 +57,31 @@ t_page	*add_page(t_page *page, size_t size, int id)
 		s = s->next;
 		if (page->next != NULL)
 			page = do_prev(page, s);
+	}
+	return (page);
+}
+
+t_page	*add_page_large(t_page *page, size_t size, int id)
+{
+	t_page	*s;
+	t_page	*pr;
+
+	pr = page;
+	s = page;
+	if (page == NULL)
+	{
+		if (!(page = init_page(size, id)))
+			return (NULL);
+	}
+	else
+	{
+		while (s->next != NULL)
+			s = s->next;
+		s->next = init_page(size, id);
+		s = s->next;
+		if (page->next != NULL)
+			page = do_prev(page, s);
+		return (s);
 	}
 	return (page);
 }
