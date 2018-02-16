@@ -42,19 +42,22 @@ int		main(int ac, char **av)
 	ft_printf(0, "%s\n", a);
 	ft_printf(0, "%s\n", b);
 	t_page	*page;
-	t_ptr	*ptr;
+//	t_ptr	*ptr;
 
 	page = g_page;
 	while (page != NULL)
 	{
-		ptr = g_page->ptr;
-		while (ptr != NULL)
+/*
+		ptr = page->ptr;
+		while (page != NULL && ptr != NULL)
 		{
-			ft_printf(0, "%d\n", ptr->id);fflush(stdin);
+			ft_printf(0, "%p\n", ptr);fflush(stdin);
 			ft_printf(0, "qwer\n");fflush(stdin);
-			ptr = ptr->next;
+			if (ptr != NULL)
+				ptr = ptr->next;
 		}
-		ft_printf(0, "%d\n", page->size);fflush(stdin);
+*/
+		ft_printf(0, "%p\n", page);fflush(stdin);
 		ft_printf(0, "asdf\n");fflush(stdin);
 		page = page->next;
 	}

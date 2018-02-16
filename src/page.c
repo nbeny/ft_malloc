@@ -26,7 +26,7 @@ t_page	*init_page(size_t size, int id)
 	return (page);
 }
 
-t_page	*do_prev(t_page *page, t_page *s)
+t_page	*page_prev(t_page *page, t_page *s)
 {
 	t_page	*pv;
 
@@ -56,7 +56,7 @@ t_page	*add_page(t_page *page, size_t size, int id)
 		s->next = init_page(size, id);
 		s = s->next;
 		if (page->next != NULL)
-			page = do_prev(page, s);
+			page = page_prev(page, s);
 	}
 	return (page);
 }
@@ -80,7 +80,7 @@ t_page	*add_page_large(t_page *page, size_t size, int id)
 		s->next = init_page(size, id);
 		s = s->next;
 		if (page->next != NULL)
-			page = do_prev(page, s);
+			page = page_prev(page, s);
 		return (s);
 	}
 	return (page);

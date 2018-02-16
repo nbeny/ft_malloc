@@ -7,7 +7,7 @@
 typedef struct	s_page
 {
 	int				id;
-	int				size;
+	size_t			size;
 	struct s_ptr	*ptr;
 	size_t			addr;
 	struct s_page	*next;
@@ -17,7 +17,7 @@ typedef struct	s_page
 typedef struct	s_ptr
 {
 	int				id;
-	int				size;
+	size_t			size;
 	int				free;
 	size_t			addr;
 	struct s_ptr	*next;
@@ -38,7 +38,7 @@ size_t	ft_power_of(size_t size);
 */
 t_ptr	*init_ptr(t_ptr *ptr, size_t size, int id);
 t_page	*init_page(size_t size, int id);
-t_page	*do_prev(t_page *page, t_page *s);
+t_page	*page_prev(t_page *page, t_page *s);
 t_page	*add_page(t_page *page, size_t size, int id);
 t_page	*add_page_large(t_page *page, size_t size, int id);
 /*
