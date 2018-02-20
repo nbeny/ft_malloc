@@ -15,6 +15,7 @@ t_page	*init_page(size_t size, int id)
 {
 	t_page	*page;
 
+	ft_printf(2, "*%d*\n", size);
 	if (!(page = (t_page *)mmap(0, size + sizeof(t_page), PROT_READ | PROT_WRITE, MAP_ANON | MAP_PRIVATE, -1, 0)))
 		return (NULL);
 	page->id = id;
