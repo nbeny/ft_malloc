@@ -28,7 +28,7 @@ typedef struct	s_ptr
 **globale
 */
 struct s_page	*g_page;
-struct s_ptr	*g_ptr;
+//struct s_ptr	*g_ptr;
 /*
 **tools
 */
@@ -63,4 +63,12 @@ void	*ft_malloc(size_t size);
 **free
 */
 //void	ft_free(void *ptr);
+/*
+**print
+*/
+int		check_exist_id(int id);
+void	print_tiny(void);
+void	print_small(void);
+void	print_large(void);
+void	show_alloc_mem(void);
 #endif

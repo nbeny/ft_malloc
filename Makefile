@@ -14,7 +14,7 @@ NAME	=	malloc
 
 N_INC	=	malloc.h
 N_SRC	=	tools.c page.c tiny.c small.c\
-			malloc.c main.c
+			malloc.c print.c main.c
 
 CC	=	gcc
 CC_FLAG	=	-Wall -Wall -Werror -fsanitize=address -O0 -g3

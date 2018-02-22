@@ -57,6 +57,7 @@ int		main(int ac, char **av)
 	ft_printf(0, "%s\n", tty);
 	ft_printf(0, "%s\n", a);
 	ft_printf(0, "%s\n", c);
+	show_alloc_mem();
 	/*
 	t_page	*page;
 	t_ptr	*ptr;
