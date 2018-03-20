@@ -36,10 +36,8 @@ int			check_page_tiny(t_page *page, size_t size)
 			s = s->next;
 		if (check_page_size(s, ft_power_of(size)))
 			return (0);
-		ft_printf(2, "if(id == 0)\n");
 		if (s->id == 0)
 			return (1);
-		ft_printf(2, "else\n");
 		return (0);
 	}
 	return (0);

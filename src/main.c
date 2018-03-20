@@ -5,7 +5,7 @@ int		main(int ac, char **av)
 	char	*tty;
 	char	*a;
 	char	*b;
-	char	*c;
+//	char	*c;
 //	char	*d;
 //	char	*e;
 //	char	*f;
@@ -16,21 +16,21 @@ int		main(int ac, char **av)
 	tty = (char *)ft_malloc(sizeof(char) * 10);
 	a = (char *)ft_malloc(sizeof(char) * 10);
 	b = (char *)ft_malloc(sizeof(char) * 41);
-	c = (char *)ft_malloc(sizeof(char) * 41);
+//	c = (char *)ft_malloc(sizeof(char) * 41);
 //	d = (char *)ft_malloc(sizeof(char) * 41);
 //	e = (char *)ft_malloc(sizeof(char) * 41);
 //	f = (char *)ft_malloc(sizeof(char) * 41);
 	while (i < 40)
 	{
 		b[i] = 'b';
-		c[i] = 'c';
+//		c[i] = 'c';
 //		d[i] = 'd';
 //		e[i] = 'e';
 //		f[i] = 'f';
 		i++;
 	}
 	b[i] = 0;
-	c[i] = 0;
+//	c[i] = 0;
 //	d[i] = 0;
 //	e[i] = 0;
 //	f[i] = 0;
@@ -56,7 +56,7 @@ int		main(int ac, char **av)
 	tty[9] = 0;
 	ft_printf(0, "%s\n", tty);
 	ft_printf(0, "%s\n", a);
-	ft_printf(0, "%s\n", c);
+//	ft_printf(0, "%s\n", c);
 	show_alloc_mem();
 	/*
 	t_page	*page;
