@@ -1,29 +1,31 @@
 #include "malloc.h"
 
+struct s_pg		*g_pg = NULL;
+
 void	*ft_malloc(size_t size)
 {
-	void	*ptr;
+	t_pg	*ptr;
 
 	ptr = NULL;
-	if (size <= 0 && size > (ft_power(2, 64) - 1))
+	if (size <= 0)//&& size > (ft_power(2, 64) - 1))
 		return (NULL);
 	else if (size < 64)
 	{
-		if (!check_page_tiny(size))
-			g_pg = add_page(size, 0);
-		ptr = get_ptr_tiny();
+		if (!check_page_tiny(g_pg, size))
+			ptr = add_page(g_pg, size, 0);
+		ptr = get_ptr_tiny(ptr);
 	}
-	else if (size >= 64 && size < 2048)
+	else if (size >= 64 && size < 1024)
 	{
-		if (!check_page_small(size))
-			g_pg = add_page(size, 1);
-		ptr = get_ptr_small();
+		if (!check_page_small(g_pg, size))
+			ptr = add_page(g_pg, size, 1);
+		ptr = get_ptr_small(ptr);
 	}
 	else
 	{
-		g_pg = add_page_large(size, 2);
+		ptr = add_page(g_pg, size, 2);
 	}
-	if (g_pg == NULL)
+	if (ptr == NULL)
 		return (NULL);
-	return (ptr);
+	return ((void *)ptr);
 }
