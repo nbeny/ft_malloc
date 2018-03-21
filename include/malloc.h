@@ -3,7 +3,7 @@
 # include "../ft_printf/include/ft_printf.h"
 # include <stdlib.h>
 # include <sys/mman.h>
-# define SIZE_PAGE (getpagesize() + sizeof(t_pg *))
+# define SIZE_PAGE (getpagesize() + sizeof(t_pg))
 
 typedef struct	s_page
 {
@@ -29,14 +29,15 @@ typedef struct	s_pg
 {
 	int			id;
 	size_t		size;
-	int			free;
+	size_t		tab[20];
+	int			i;
 	struct s_pg	*nxt;
 }				t_pg;
 /*
 **globale
 */
-//struct s_pg		*g_pg = NULL;
-struct s_page	*g_page;
+static struct s_pg		*g_pg = NULL;
+//struct s_page	*g_page;
 //struct s_ptr	*g_ptr;
 
 /*
@@ -88,4 +89,5 @@ int		check_page_small(t_pg *g_pg, size_t size);
 t_pg	*get_ptr_tiny(t_pg *ptr);
 t_pg	*get_ptr_small(t_pg *ptr);
 void	*ft_malloc(size_t size);
+void	show_alloc_mem(void);
 #endif

@@ -9,7 +9,15 @@ t_pg	*init_page(size_t size, int id)
 		return (NULL);
 	page->id = id;
 	page->size = 0;
-	page->free = 0;
+	if (id == 2)
+		page->size = size;
+	page->i = 0;
+	while (page->i < 20)
+	{
+		page->tab[page->i] = 0;
+		page->i++;
+	}
+	page->i = 0;
 	page->nxt = NULL;
 	return (page);
 }

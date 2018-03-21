@@ -1,5 +1,7 @@
 #include "malloc.h"
 
+//struct s_pg		*g_pg = NULL;
+
 int		main(int ac, char **av)
 {
 	char	*a;
@@ -30,6 +32,7 @@ int		main(int ac, char **av)
 
 	(void)ac;
 	(void)av;
+	i = sizeof(t_pg);
 	a = ft_malloc(sizeof(char) * 8);
 	b = ft_malloc(sizeof(char) * 8);
 	c = ft_malloc(sizeof(char) * 8);
@@ -117,6 +120,7 @@ int		main(int ac, char **av)
 		i++;
 	}
 	dd[i] = 0;
+/*
 	ft_printf(0, "%s\n", a);
 	ft_printf(0, "%s\n", b);
 	ft_printf(0, "%s\n", c);
@@ -141,5 +145,7 @@ int		main(int ac, char **av)
 	ft_printf(0, "%s\n", r);
 	ft_printf(0, "%s\n", s);
 	ft_printf(0, "%s\n", t);
+*/
+	show_alloc_mem();
 	return (0);
 }

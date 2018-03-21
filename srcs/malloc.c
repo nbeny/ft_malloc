@@ -1,13 +1,11 @@
 #include "malloc.h"
 
-struct s_pg		*g_pg = NULL;
-
 void	*ft_malloc(size_t size)
 {
 	t_pg	*ptr;
 
 	ptr = NULL;
-	if (size <= 0)//&& size > (ft_power(2, 64) - 1))
+	if (size <= 0 && size > (ft_power(2, 64) - 1))
 		return (NULL);
 	else if (size < 64)
 	{
@@ -27,6 +25,7 @@ void	*ft_malloc(size_t size)
 	{
 		ft_printf(2, "large\n");
 		ptr = add_page(g_pg, size, 2);
+		ft_printf(2, "%p\n", ptr);
 	}
 	if (ptr == NULL)
 		return (NULL);
