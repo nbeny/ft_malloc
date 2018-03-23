@@ -91,7 +91,7 @@ static void		print_large(void)
 		if (page->id == 2)
 		{
 			ft_printf(0, "\tOx%X - Ox%X : %zu octets\n",\
-				page, (size_t)page + page->size + sizeof(t_pg),\
+					  page, (size_t)page + page->size + sizeof(t_pg),\
 				page->size);
 		}
 		page = page->nxt;

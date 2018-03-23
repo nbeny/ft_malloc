@@ -36,7 +36,7 @@ typedef struct	s_pg
 /*
 **globale
 */
-struct s_pg		*g_pg;
+struct s_pg		*g_pg = NULL;
 //struct s_page	*g_page;
 //struct s_ptr	*g_ptr;
 

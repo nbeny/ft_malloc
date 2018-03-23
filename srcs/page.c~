@@ -32,7 +32,12 @@ t_pg	*add_page(size_t size, int id)
 	if (g_pg == NULL)
 	{
 		ft_printf(2, "g_pg == NULL\n");
-		g_pg = init_page(size, id);
+		if (!(g_pg = init_page(size, id)))
+		{
+			ft_printf(2, "\n**********************%d\n", g_pg->id );
+			return (NULL);
+
+		}
 			ft_printf(2, "\nOOPS**********************%d\n", g_pg->id );
 		return (g_pg);
 	}
@@ -41,7 +46,10 @@ t_pg	*add_page(size_t size, int id)
 		ft_printf(2, "g_pg != NULL\n");
 		while (page->nxt != NULL)
 			page = page->nxt;
-		page->nxt = init_page(size, id);
+		if(!(page->nxt = init_page(size, id)))
+		{
+			return (NULL);
+		}
 		page = page->nxt;
 		return (page);
 	}

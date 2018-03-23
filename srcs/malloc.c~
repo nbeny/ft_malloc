@@ -15,7 +15,6 @@ void	*ft_malloc(size_t size)
 			ft_printf(2, "add_page\n");
 			ptr = add_page(size, 0);
 		}
-		ft_printf(2, "\n---------------%d\n", g_pg->id);
 		ptr = get_ptr_tiny(ptr);
 	}
 	else if (size >= 64 && size < 1024)
