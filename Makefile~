@@ -6,7 +6,7 @@
 #    By: nbeny <nbeny@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/04/12 01:47:28 by nbeny             #+#    #+#              #
-#    Updated: 2018/03/28 22:49:33 by nbeny            ###   ########.fr        #
+#    Updated: 2018/03/28 21:51:17 by nbeny            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ CC	=	gcc
 CC_FLAG	=	-Wall -Wall -Werror -fsanitize=address -O0 -g3
 CURSES	=	-ltermcap
 
-T_SRC	=	./srcs/
+T_SRC	=	./nik_mom/
 T_INC	=	./include/
 T_OBJ	=	./obj/
 T_PTF	=	./ft_printf/

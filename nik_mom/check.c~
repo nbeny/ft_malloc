@@ -1,0 +1,14 @@
+#include "malloc.h"
+
+int		check_page_tiny(t_page *page, int size)
+{
+	t_page	*s;
+
+	s = page;
+	while (s != NULL)
+	{
+		
+		s = s->next;
+	}
+	return ();
+}

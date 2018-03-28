@@ -3,7 +3,10 @@
 # include "../ft_printf/include/ft_printf.h"
 # include <stdlib.h>
 # include <sys/mman.h>
-# define SIZE_PAGE (getpagesize() + sizeof(t_pg))
+# define TINY (2 * getpagesize() + sizeof(t_page))
+# define SMALL (8 * getpagesize() + sizeof(t_page))
+# define PROT (PROT_READ | PROT_WRITE)
+# define MAP (MAP_ANON | MAP_PRIVATE)
 
 typedef struct	s_page
 {
@@ -36,7 +39,7 @@ typedef struct	s_pg
 /*
 **globale
 */
-struct s_pg		*g_pg;
+extern t_pg		g_pg;
 //struct s_page	*g_page;
 //struct s_ptr	*g_ptr;
 
