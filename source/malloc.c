@@ -8,7 +8,7 @@
 
 void	*ft_malloc(size_t size)
 {
-	t_ptr	*ptr;
+	void	*ptr;
 	t_page	*page;
 
 	ptr = NULL;
@@ -17,22 +17,22 @@ void	*ft_malloc(size_t size)
 		return (NULL);
 	else if (size < 64)
 	{
-		if (!check_page_tiny(size))
-			g_page = add_page((size_t)getpagesize(), 0);
-		if (g_page != NULL)
-			ptr = add_ptr_tiny(g_page, size, 0);
+		if (check_page_tiny(size))
+			page = add_page(size, 0);
+		if (page != NULL)
+			ptr = add_ptr(page, size);
 	}
 	else if (size >= 64 && size < 4096)
 	{
-		if (!check_page_small(g_page, size))
-			g_page = add_page(g_page, (size_t)getpagesize(), 1);
+		if (check_page_small(size))
+			page = add_page(size, 1);
 		if (g_page != NULL)
-			ptr = add_ptr_small(g_page, size, 1);
+			ptr = add_ptr(page, size);
 	}
 	else
 	{
-		page = add_page_large(g_page, size, 2);
-		return ((void *)page);
+		page = add_page(size, 2);
+		return ((void *)(page + sizeof(t_page)));
 	}
 	if (g_page == NULL)
 		return (NULL);

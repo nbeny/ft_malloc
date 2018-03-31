@@ -30,6 +30,6 @@ void	*ft_malloc(size_t size)
 	}
 	if (ptr == NULL)
 		return (NULL);
-		ft_printf(2, "%pXXXXXXXXXXXX\n", g_pg);
+	ft_printf(2, "%pXXXXXXXXXXXX\n", g_pg);
 	return ((void *)ptr);
 }

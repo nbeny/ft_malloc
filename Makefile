@@ -6,7 +6,7 @@
 #    By: nbeny <nbeny@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/04/12 01:47:28 by nbeny             #+#    #+#              #
-#    Updated: 2018/03/28 22:49:33 by nbeny            ###   ########.fr        #
+#    Updated: 2018/03/31 18:47:33 by nbeny            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,13 +15,13 @@ NAME	=	malloc
 N_INC	=	malloc.h
 #N_SRC	=	tools.c page.c tiny.c small.c\
 #			malloc.c print.c main.c
-N_SRC	=	malloc.c page.c ptr.c print.c main2.c
+N_SRC	=	malloc.c page.c ptr.c check.c tools.c print.c main2.c
 
 CC	=	gcc
 CC_FLAG	=	-Wall -Wall -Werror -fsanitize=address -O0 -g3
 CURSES	=	-ltermcap
 
-T_SRC	=	./srcs/
+T_SRC	=	./source/
 T_INC	=	./include/
 T_OBJ	=	./obj/
 T_PTF	=	./ft_printf/

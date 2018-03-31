@@ -1,0 +1,15 @@
+#include "malloc.h"
+
+t_page	*add_page(t_page *page, size_t size, int id)
+{
+	t_page	*s;
+
+	s = page;
+	if (page == NULL)
+	{
+		if (!(page = (t_page *)mmap(0, size, PROT, MAP, -1, 0)
+	}
+	else
+	{
+	}
+}

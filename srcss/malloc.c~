@@ -1,0 +1,38 @@
+#include "malloc.h"
+
+void	int_page(t_page page)
+{
+	page.id = 0;
+	page.size = 0;
+	page.ptr = NULL;
+	page.addr = 0;
+	page.next = NULL;
+	page.prev = NULL;
+}
+
+void	*ft_malloc(size_t size)
+{
+	t_page	page;
+
+	int_page(g_page);
+	if (!(g_page.next = (t_page *)mmap(0, TINY, PROT, MAP, -1, 0)))
+		return (NULL);
+	int_page(*(g_page.next));
+	page = *(g_page.next);
+	page.id = 1;
+	return ((void *)NULL);
+}
+
+int		main(int ac, char **av)
+{
+	t_page	page;
+
+	ft_malloc(43);
+	page = g_page;
+	while (page.next != NULL)
+	{
+		ft_printf(0, "1::%d\n", page.id);
+		page = *(page.next);
+	}
+	return (0);
+}
