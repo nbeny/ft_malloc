@@ -13,6 +13,7 @@ int		check_page_tiny(size_t size)
 			return (0);
 		s = s->next;
 	}
+	ft_printf(2, "malloc_tiny\n");
 	return (1);
 }
 
@@ -29,5 +30,6 @@ int		check_page_small(size_t size)
 			return (0);
 		s = s->next;
 	}
+	ft_printf(2, "malloc_small\n");
 	return (1);
 }
