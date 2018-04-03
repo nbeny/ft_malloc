@@ -57,6 +57,7 @@ void	print_small(void)
 		ft_printf(0, "SMALL\n");
 	while (page != NULL)
 	{
+		ft_printf(2, "page->id == %d\n", page->id);
 		if (page->id == 1)
 		{
 			i++;

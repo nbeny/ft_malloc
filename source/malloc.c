@@ -20,17 +20,24 @@ void	*ft_malloc(size_t size)
 		if (check_page_tiny(size))
 			page = add_page(size, 0);
 		if (page != NULL)
+		{
+			ft_printf(2, "new page\n");
 			ptr = add_ptr(page, size);
+		}
 	}
 	else if (size >= 64 && size < 4096)
 	{
 		if (check_page_small(size))
 			page = add_page(size, 1);
 		if (g_page != NULL)
+		{
+			ft_printf(2, "new page\n");
 			ptr = add_ptr(page, size);
+		}
 	}
 	else
 	{
+		ft_printf(2, "new page\n");
 		page = add_page(size, 2);
 		return ((void *)(page + sizeof(t_page)));
 	}

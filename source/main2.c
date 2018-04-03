@@ -19,25 +19,10 @@ int		main(int ac, char **av)
 		s = ft_malloc(sizeof(char) * 500);
 		s = ft_malloc(sizeof(char) * 500);
 		s = ft_malloc(sizeof(char) * 500);
-		s = ft_malloc(sizeof(char) * 500);
-		s = ft_malloc(sizeof(char) * 500);
-		s = ft_malloc(sizeof(char) * 500);
-		s = ft_malloc(sizeof(char) * 500);
-		s = ft_malloc(sizeof(char) * 500);
-		s = ft_malloc(sizeof(char) * 500);
-		s = ft_malloc(sizeof(char) * 500);
-		s = ft_malloc(sizeof(char) * 500);
-		s = ft_malloc(sizeof(char) * 500);
-		s = ft_malloc(sizeof(char) * 500);
-		s = ft_malloc(sizeof(char) * 500);
-		s = ft_malloc(sizeof(char) * 500);
-		s = ft_malloc(sizeof(char) * 500);
-		s = ft_malloc(sizeof(char) * 500);
-		s = ft_malloc(sizeof(char) * 23);
-		s = ft_malloc(sizeof(char) * 23);
-		s = ft_malloc(sizeof(char) * 23);
 		s = ft_malloc(sizeof(char) * 5003333);
-
+		s = ft_malloc(sizeof(char) * 5003333);
+		s = ft_malloc(sizeof(char) * 5003333);
+		s = ft_malloc(sizeof(char) * 5003333);
 /*
 		while (av[i] != NULL)
 		{
@@ -59,6 +44,5 @@ int		main(int ac, char **av)
 		ft_printf(2, ">>>>>>>>>>>>>>\n");
 		ft_printf(2, ">>>>>>>>>>>>>>\n");
 	}
-	
 	return (0);
 }
