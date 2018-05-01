@@ -12,3 +12,7 @@
 in progess..
 
 - [X] some test
+
+### link:
+
+https://www.developpez.net/forums/d240619/c-cpp/c/gestion-memoire-region-mmap/
