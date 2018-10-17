@@ -7,12 +7,10 @@
 # define SMALL (8 * getpagesize() + sizeof(t_page))
 # define PROT (PROT_READ | PROT_WRITE)
 # define MAP (MAP_ANON | MAP_PRIVATE)
+
 typedef struct	s_page
 {
-	int						id;
-	size_t					size;
-	void					*whereami;
-	struct s_ptr			*ptr;
+	struct s_page			*prev;
 	struct s_page			*next;
 }				t_page;
 

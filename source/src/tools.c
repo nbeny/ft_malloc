@@ -1,4 +1,4 @@
-#include "ft_malloc.h"
+#include "malloc.h"
 
 size_t	ft_power_of(size_t size)
 {

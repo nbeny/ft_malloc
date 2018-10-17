@@ -21,7 +21,7 @@ CC	=	gcc
 CC_FLAG	=	-Wall -Wall -Werror -g3 -O0 -fsanitize=address
 CURSES	=	-ltermcap
 
-T_SRC	=	./source/
+T_SRC	=	./src/
 T_INC	=	./include/
 T_OBJ	=	./obj/
 T_PTF	=	./ft_printf/
