@@ -3,19 +3,18 @@
 # include "../ft_printf/include/ft_printf.h"
 # include <stdlib.h>
 # include <sys/mman.h>
-# define TINY (2 * getpagesize() + sizeof(t_page))
-# define SMALL (8 * getpagesize() + sizeof(t_page))
+# define TAB (4 * getpagesize())
+# define TINY (2 * getpagesize())
+# define SMALL (8 * getpagesize())
 # define PROT (PROT_READ | PROT_WRITE)
 # define MAP (MAP_ANON | MAP_PRIVATE)
 
 typedef struct	s_page
 {
-    int                     id;
-    unsigned long long      start;
-    unsigned long long      end;
-    unsigned long long      addr;
-	struct s_page			*prev;
-	struct s_page			*next;
+    int             id;
+    size_t          page;
+    size_t          addr;
+	struct s_page	*next;
 }				t_page;
 
 t_page  *g_page;

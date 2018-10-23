@@ -1,48 +1,34 @@
 #include "ft_malloc.h"
 
-int		main(int ac, char **av)
+int     main(int argc, char **argv)
 {
-	int		i;
-//	int		j;
-	char	**s;
-
-	i = 0;
-	s = NULL;
-//	if (ac > 1)
-	{
-		s = ft_malloc(sizeof(char *) * 500);
-		s = ft_malloc(sizeof(char) * 500);
-		s = ft_malloc(sizeof(char) * 500);
-		s = ft_malloc(sizeof(char) * 50);
-		s = ft_malloc(sizeof(char) * 50);
-		s = ft_malloc(sizeof(char) * 50);
-		s = ft_malloc(sizeof(char) * 500);
-		s = ft_malloc(sizeof(char) * 500);
-		s = ft_malloc(sizeof(char) * 500);
-		s = ft_malloc(sizeof(char) * 5003333);
-		s = ft_malloc(sizeof(char) * 5003333);
-		s = ft_malloc(sizeof(char) * 5003333);
-		s = ft_malloc(sizeof(char) * 5003333);
-/*
-		while (av[i] != NULL)
-		{
-			s[i] = ft_malloc(sizeof(char) * 10);
-			j = 0;
-			while (j < 10)
-			{
-				s[i][j] = '*';
-				j++;
-			}
-			s[i][j] = '\0';
-			ft_printf(0, "%s\n", s[i]);
-			i++;
-		}
-*/
-		ft_printf(2, ">>>>>>>>>>>>>>\n");
-		ft_printf(2, ">>>>>>>>>>>>>>\n");
-		show_alloc_mem();
-		ft_printf(2, ">>>>>>>>>>>>>>\n");
-		ft_printf(2, ">>>>>>>>>>>>>>\n");
-	}
-	return (0);
+    char *str1 = NULL;
+    char *str2 = NULL;
+    char *str3 = NULL;
+    char *str4 = NULL;
+    
+    str1 = (char *)ft_malloc(sizeof(char) * 8);
+    str2 = (char *)ft_malloc(sizeof(char) * 200);
+    str3 = (char *)malloc(sizeof(char) * 8);
+    str4 = (char *)malloc(sizeof(char) * 200);
+    int i = 0;
+    while (i < 199)
+    {
+        if (i < 7)
+        {
+            str1[i] = '*';
+            str3[i] = '*';
+        }
+        if (i == 7)
+        {
+            str1[i] = '*';
+            str3[i] = '*';
+        }
+        str2[i] = '*';
+        str4[i] = '*';
+    }
+    str2[i] = '*';
+    str4[i] = '*';
+    ft_printf(2, "%p\n%p\n%p\n%p\n", str1, str2, str3, str4);
+    return (0);
 }

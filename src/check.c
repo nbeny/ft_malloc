@@ -1,44 +1,29 @@
 #include "ft_malloc.h"
 
-int     check_size_page(t_page *s, size_t size)
+int     check_page_tiny(size_t size, int id)
 {
-    if (s->end - s->addr > size)
-        return (1);
+    t_page  *save;
+    int     ok;
+    int     power;
+
+    save = NULL;
+    ok = -1;
+    if (g_page == NULL)
+    {
+        g_page = create_tab(size, id);
+    }
+    else
+    {
+        save = g_page;
+        while (save)
+        {
+            power = ft_power_of(size);
+            if (save->id == 0 && TINY - (save->addr - save->page) > power && power != -1)
+                return (1);
+            if (power == -1)
+                return (-1);
+            save = save->next;
+        }
+    }
     return (0);
-}
-
-void	*check_page_tiny(size_t size)
-{
-	t_page	*s;
-
-	s = g_page;
-	ft_printf(2, "%zu\n", size);
-	while (s != NULL)
-	{
-//need add mac condition
-//check if we can insert in page
-		if (s->id == 0 && check_size_page(s, size))
-			return ((void *)s);
-		s = s->next;
-	}
-	ft_printf(2, "malloc_tiny\n");
-	return (NULL);
-}
-
-void	*check_page_small(size_t size)
-{
-	t_page	*s;
-
-	s = g_page;
-	ft_printf(2, "%zu\n", size);
-	while (s != NULL)
-	{
-//need add mac condition
-//check if we can insert in page
-		if (s->id == 1 && check_size_page(s, size))
-			return ((void *)s);
-		s = s->next;
-	}
-	ft_printf(2, "malloc_small\n");
-	return (NULL);
 }
