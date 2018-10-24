@@ -14,6 +14,7 @@ typedef struct	s_page
     int             id;
     size_t          page;
     size_t          addr;
+    size_t          tab;
 	struct s_page	*next;
 }				t_page;
 
