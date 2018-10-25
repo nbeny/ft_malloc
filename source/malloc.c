@@ -21,7 +21,6 @@ void	*ft_malloc(size_t size)
 			page = add_page(size, 0);
 		if (page != NULL)
 		{
-			ft_printf(2, "new page\n");
 			ptr = add_ptr(page, size);
 		}
 	}
@@ -31,13 +30,11 @@ void	*ft_malloc(size_t size)
 			page = add_page(size, 1);
 		if (g_page != NULL)
 		{
-			ft_printf(2, "new page\n");
 			ptr = add_ptr(page, size);
 		}
 	}
 	else
 	{
-		ft_printf(2, "new page\n");
 		page = add_page(size, 2);
 		return ((void *)(page + sizeof(t_page)));
 	}

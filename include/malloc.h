@@ -10,6 +10,10 @@
 
 typedef struct	s_page
 {
+	int						id;
+	size_t					size;
+	void					*whereami;
+	void					*ptr;
 	struct s_page			*prev;
 	struct s_page			*next;
 }				t_page;

@@ -11,7 +11,7 @@ t_page	*init_page(size_t size, int id)
 		page->size = size;
 	else
 		page->size = 0;
-	page->whereami = (void *)(page + sizeof(t_page));
+	page->whereami = (t_page *)(page);
 	page->ptr = NULL;
 	page->next = NULL;
 	return (page);

@@ -57,7 +57,7 @@ void	print_small(void)
 		ft_printf(0, "SMALL\n");
 	while (page != NULL)
 	{
-		ft_printf(2, "page->id == %d\n", page->id);
+//		ft_printf(2, "page->id == %d\n", page->id);
 		if (page->id == 1)
 		{
 			i++;
@@ -110,7 +110,7 @@ void	print_id(void)
 
 void	show_alloc_mem(void)
 {
-	print_id();
+//	print_id();
 	print_tiny();
 	print_small();
 	print_large();
