@@ -11,7 +11,7 @@ void	print_global_info(void)
 	{
 		ft_printf(2, "id = %d\n", savepage->id);
 		ft_printf(2, "size = %zu\n", savepage->size);
-		ft_printf(2, "whereami = %p\n", savepage->whereami);
+		ft_printf(2, "page = %p\n", savepage->page);
 		ft_printf(2, "ptr = %p\n", savepage->ptr);
 		ft_printf(2, "next = %p\n", savepage->next);
 		saveptr = savepage->ptr;
@@ -39,9 +39,6 @@ int		main(int ac, char **av)
 	
 //	if (ac > 1)
 	{
-		s = ft_malloc(sizeof(char *) * 500);
-		s = ft_malloc(sizeof(char) * 500);
-		s = ft_malloc(sizeof(char) * 500);
 		s = ft_malloc(sizeof(char) * 50);
 		s = ft_malloc(sizeof(char) * 50);
 		s = ft_malloc(sizeof(char) * 50);
@@ -52,6 +49,31 @@ int		main(int ac, char **av)
 		s = ft_malloc(sizeof(char) * 5003333);
 		s = ft_malloc(sizeof(char) * 5003333);
 		s = ft_malloc(sizeof(char) * 5003333);
+		s = ft_malloc(sizeof(char) * 5003333);
+		s = ft_malloc(sizeof(char) * 500);
+		s = ft_malloc(sizeof(char) * 500);
+		s = ft_malloc(sizeof(char) * 500);
+		s = ft_malloc(sizeof(char) * 50);
+		s = ft_malloc(sizeof(char) * 50);
+		s = ft_malloc(sizeof(char) * 50);
+		s = ft_malloc(sizeof(char) * 50);
+		s = ft_malloc(sizeof(char) * 500);
+		s = ft_malloc(sizeof(char) * 500);
+		s = ft_malloc(sizeof(char) * 500);
+		s = ft_malloc(sizeof(char) * 5003333);
+		s = ft_malloc(sizeof(char) * 5003333);
+		s = ft_malloc(sizeof(char) * 5003333);
+		s = ft_malloc(sizeof(char) * 5003333);
+		s = ft_malloc(sizeof(char) * 5003333);
+		s = ft_malloc(sizeof(char) * 5003333);
+		s = ft_malloc(sizeof(char) * 5003333);
+		s = ft_malloc(sizeof(char) * 5003333);
+		s = ft_malloc(sizeof(char) * 5003333);
+		s = ft_malloc(sizeof(char) * 5003333);
+		s = ft_malloc(sizeof(char) * 5003333);
+		s = ft_malloc(sizeof(char) * 500);
+		s = ft_malloc(sizeof(char) * 500);
+		s = ft_malloc(sizeof(char) * 500);
 /*
 		while (av[i] != NULL)
 		{

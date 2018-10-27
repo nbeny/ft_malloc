@@ -8,37 +8,29 @@
 # define PROT (PROT_READ | PROT_WRITE)
 # define MAP (MAP_ANON | MAP_PRIVATE)
 
-typedef struct	s_page
-{
-	int						id;
-	size_t					size;
-	void					*whereami;
-	void					*ptr;
-	struct s_page			*prev;
-	struct s_page			*next;
-}				t_page;
-
 typedef struct	s_ptr
 {
 	size_t			size;
+	size_t			power;
+	void			*ptr;
 	int				free;
 	struct s_ptr	*next;
 }				t_ptr;
 
-typedef struct	s_pg
+typedef struct	s_page
 {
-	int			id;
-	size_t		size;
-	size_t		tab[20];
-	int			i;
-	struct s_pg	*nxt;
-}				t_pg;
+	int						id;
+	size_t					size;
+	void					*page;
+	struct s_ptr			*ptr;
+	struct s_ptr			*pos;
+	struct s_page			*next;
+}				t_page;
+
 /*
 **globale
 */
-//extern t_pg		g_pg;
 t_page		*g_page;
-//struct s_ptr	*g_ptr;
 
 /*
 **tools
@@ -60,8 +52,8 @@ void	*add_ptr(t_page *page, size_t size);
 /*
 **check
 */
-int		check_page_tiny(size_t size);
-int		check_page_small(size_t size);
+t_page	*check_page_tiny(size_t size);
+t_page	*check_page_small(size_t size);
 /*
 **tiny
 */

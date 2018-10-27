@@ -1,6 +1,6 @@
 #include "malloc.h"
 
-int		check_page_tiny(size_t size)
+t_page		*check_page_tiny(size_t size)
 {
 	t_page	*s;
 
@@ -8,14 +8,14 @@ int		check_page_tiny(size_t size)
 	while (s != NULL)
 	{
 //need add mac condition
-		if (s->id == 0)
-			return (0);
+		if (s->id == 0 && (size_t)((size_t)s->pos - (size_t)s->page) < size)
+			return (s);
 		s = s->next;
 	}
-	return (1);
+	return (NULL);
 }
 
-int		check_page_small(size_t size)
+t_page		*check_page_small(size_t size)
 {
 	t_page	*s;
 
@@ -23,9 +23,9 @@ int		check_page_small(size_t size)
 	while (s != NULL)
 	{
 //need add mac condition
-		if (s->id == 1)
-			return (0);
+		if (s->id == 1 && (size_t)((size_t)s->pos - (size_t)s->page) < size)
+			return (s);
 		s = s->next;
 	}
-	return (1);
+	return (NULL);
 }
