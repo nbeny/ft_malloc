@@ -28,6 +28,7 @@ void	*add_ptr(t_page *page, size_t size)
 		page->ptr = init_ptr(page->ptr, size);
 		ret = (void *)page->ptr->ptr;
 		ft_printf(2, "page->ptr NULL: %p\n", page->ptr);
+		page->pos = (void *)((size_t)ret + page->ptr->power);
 		return (ret);
 	}
 	else
@@ -35,13 +36,12 @@ void	*add_ptr(t_page *page, size_t size)
 		s = page->ptr;
 		while (s->next != NULL)
 			s = s->next;
-		s = init_ptr(s, size);
 		s->next = (t_ptr *)(s + sizeof(t_ptr) + s->size + 10);
 		s = s->next;
 		s = init_ptr(s, size);
 		ret = s + sizeof(t_ptr);
 		ft_printf(2, "page->ptr OTHER: %p\n", page->ptr);
-		page->pos = (t_ptr *)s;
+		page->pos = (void *)((size_t)ret + s->power);
 		return (ret);
 	}
 	return (NULL);

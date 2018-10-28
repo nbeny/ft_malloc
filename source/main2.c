@@ -13,14 +13,18 @@ void	print_global_info(void)
 		ft_printf(2, "size = %zu\n", savepage->size);
 		ft_printf(2, "page = %p\n", savepage->page);
 		ft_printf(2, "ptr = %p\n", savepage->ptr);
+		ft_printf(2, "pos = %p\n", savepage->pos);
 		ft_printf(2, "next = %p\n", savepage->next);
 		saveptr = savepage->ptr;
 		while (saveptr)
 		{
 			ft_printf(2, "\tptr->size = %zu\n", saveptr->size);
+			ft_printf(2, "\tptr->power = %zu\n", saveptr->power);
+			ft_printf(2, "\tptr->ptr = %p\n", saveptr->ptr);
 			ft_printf(2, "\tptr->free = %d\n", saveptr->free);
 			ft_printf(2, "\tptr->next = %p\n", saveptr->next);
 			saveptr = saveptr->next;
+			ft_printf(2, "\n");
 		}
 		ft_printf(2, "\n");
 		savepage = savepage->next;
@@ -41,39 +45,11 @@ int		main(int ac, char **av)
 	{
 		s = ft_malloc(sizeof(char) * 50);
 		s = ft_malloc(sizeof(char) * 50);
-		s = ft_malloc(sizeof(char) * 50);
 		s = ft_malloc(sizeof(char) * 500);
 		s = ft_malloc(sizeof(char) * 500);
 		s = ft_malloc(sizeof(char) * 500);
 		s = ft_malloc(sizeof(char) * 5003333);
 		s = ft_malloc(sizeof(char) * 5003333);
-		s = ft_malloc(sizeof(char) * 5003333);
-		s = ft_malloc(sizeof(char) * 5003333);
-		s = ft_malloc(sizeof(char) * 5003333);
-		s = ft_malloc(sizeof(char) * 500);
-		s = ft_malloc(sizeof(char) * 500);
-		s = ft_malloc(sizeof(char) * 500);
-		s = ft_malloc(sizeof(char) * 50);
-		s = ft_malloc(sizeof(char) * 50);
-		s = ft_malloc(sizeof(char) * 50);
-		s = ft_malloc(sizeof(char) * 50);
-		s = ft_malloc(sizeof(char) * 500);
-		s = ft_malloc(sizeof(char) * 500);
-		s = ft_malloc(sizeof(char) * 500);
-		s = ft_malloc(sizeof(char) * 5003333);
-		s = ft_malloc(sizeof(char) * 5003333);
-		s = ft_malloc(sizeof(char) * 5003333);
-		s = ft_malloc(sizeof(char) * 5003333);
-		s = ft_malloc(sizeof(char) * 5003333);
-		s = ft_malloc(sizeof(char) * 5003333);
-		s = ft_malloc(sizeof(char) * 5003333);
-		s = ft_malloc(sizeof(char) * 5003333);
-		s = ft_malloc(sizeof(char) * 5003333);
-		s = ft_malloc(sizeof(char) * 5003333);
-		s = ft_malloc(sizeof(char) * 5003333);
-		s = ft_malloc(sizeof(char) * 500);
-		s = ft_malloc(sizeof(char) * 500);
-		s = ft_malloc(sizeof(char) * 500);
 /*
 		while (av[i] != NULL)
 		{

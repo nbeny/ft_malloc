@@ -23,7 +23,7 @@ typedef struct	s_page
 	size_t					size;
 	void					*page;
 	struct s_ptr			*ptr;
-	struct s_ptr			*pos;
+	void					*pos;
 	struct s_page			*next;
 }				t_page;
 

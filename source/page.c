@@ -10,6 +10,7 @@ t_page	*init_page(size_t size, int id)
 	page->size = size;
 	page->page = (t_page *)(page);
 	page->ptr = NULL;
+	page->pos = NULL;
 	page->next = NULL;
 	return (page);
 }
@@ -19,6 +20,7 @@ t_page	*add_page(size_t size, int id)
 	t_page	*s;
 
 	s = g_page;
+	/*
 	if (g_page != NULL && g_page->next == NULL)
 	{
 		if (id == 0)
@@ -30,6 +32,7 @@ t_page	*add_page(size_t size, int id)
 		if (g_page != NULL)
 		return (g_page->next);
 	}
+	*/
 	if (s != NULL)
 	{
 		while (s->next != NULL)

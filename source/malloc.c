@@ -13,12 +13,11 @@ void	*ft_malloc(size_t size)
 
 	ptr = NULL;
 	page = NULL;
-	ft_printf(2, "%p\n", g_page);
 	if (size <= 0 || size > (ft_power(2, 64) - 1))
 		return (NULL);
 	else if (size < 64)
 	{
-		ft_printf(2, "qwer\n");
+		ft_printf(2, "TINY\n");
 		if (!(page = check_page_small(size)))
 			page = add_page(size, 0);
 		if (page != NULL)
@@ -28,7 +27,7 @@ void	*ft_malloc(size_t size)
 	}
 	else if (size >= 64 && size < 4096)
 	{
-		ft_printf(2, "qwer\n");
+		ft_printf(2, "SMALL\n");
 		if (!(page = check_page_small(size)))
 			page = add_page(size, 1);
 		if (page != NULL)
@@ -38,7 +37,7 @@ void	*ft_malloc(size_t size)
 	}
 	else
 	{
-		ft_printf(2, "qwer\n");
+		ft_printf(2, "LARGE\n");
 		page = add_page(size, 2);
 	ft_printf(2, ">> %p <<\n", (void *)ptr);
 		return ((void *)(page + sizeof(t_page)));
